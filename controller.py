@@ -28,7 +28,6 @@ while True:
         else:
             s.send(str(100).encode())
             print("Transmission error occurs")
-            pass
     elif number  % 5 == 0:
         if random.random() > err_prob:
             s.send(str(2).encode())
@@ -36,7 +35,6 @@ while True:
         else:
             s.send(str(100).encode())
             print("Transmission error occurs")
-            pass
     elif number  % 3 == 0: 
         if random.random() > err_prob:
             s.send(str(1).encode())
@@ -44,7 +42,6 @@ while True:
         else:
             s.send(str(100).encode())
             print("Transmission error occurs")
-            pass
     else: 
         if random.random() > err_prob:
             s.send(str(0).encode())
@@ -52,8 +49,5 @@ while True:
         else:
             s.send(str(100).encode())
             print("Transmission error occurs")
-            pass
-        pass
     time.sleep(0.5) # 5 sec wait
     s.close()
-    pass
