@@ -20,7 +20,6 @@ while True:
     recv_str = msg.decode('ascii')
     print("Received number:" + recv_str)
     number = int(recv_str)
-#    print(number)
     if number % 15 == 0: 
         if random.random() > err_prob:
             s.send(str(3).encode())
