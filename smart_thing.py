@@ -24,7 +24,6 @@ def ground_truth(i):
     elif i % 5  == 0: return np.array([0, 0, 1, 0])
     elif i % 3  == 0: return np.array([0, 1, 0, 0])
     else:             return np.array([1, 0, 0, 0])
-    pass
 
 def binary_encoder(i, num_digits):
     """Represent each input by an array of its binary digits"""
@@ -60,11 +59,9 @@ if flag_realtime_learning == 1:
     model.fit(train_x, train_y, epochs=200, batch_size=64, shuffle=True)
 
     model.save("set_fizzbuzz_learning_" + str(train_start) + "_" + str(train_end) + ".h5")
-    pass
 else:
     from keras.models import load_model
     model = load_model('fizzbuzz_learning_101_1024.h5')
-    pass
 
 #print("train_x:", train_x)
 #print("train_y:", train_y)
@@ -87,7 +84,6 @@ def accuracy_test(i):
     elif i % 5  == 0: return 2
     elif i % 3  == 0: return 1
     else:             return 0
-    pass
 
 
 ####### network programming #######
@@ -137,13 +133,10 @@ while raw_x <= num_iter:
             print('Infered command:', 'fizzbuzz')
         elif infered_y == 0:
             print('Infered command:', raw_x)
-            pass
         # measure accuracy
         if infered_y == accuracy_test(raw_x):
             accuracy_cnt = accuracy_cnt + 1
-            pass
             print("accuracy ratio:", accuracy_cnt, "/", infer_cnt, "=", accuracy_cnt/infer_cnt)
-        pass
     c.close()                                                   # close the connection
 
     # state change
