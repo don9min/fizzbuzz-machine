@@ -35,8 +35,6 @@ def fizzbuzz_output(i, inference):
 
 
 # make training data sequence from the number 101 to (2 ** num_digits - 1)
-# train_x = np.array([binary_encoder(i, num_digits) for i in range(101, 2 ** num_digits)])
-# train_y = np.array([ground_truth(i) for i in range(101, 2 ** num_digits)])
 train_x = np.array([binary_encoder(i, num_digits) for i in range(train_start, train_end)])
 train_y = np.array([ground_truth(i) for i in range(train_start, train_end)])
 
