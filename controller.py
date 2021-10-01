@@ -12,10 +12,10 @@ else:
     err_prob = float(sys.argv[1])
 
 host = socket.gethostname()
-port = 51002
+port = 9361 
 while True:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('192.168.87.107', port))
+    s.connect(('192.168.0.3', port))
     msg = s.recv(1024)
     recv_str = msg.decode('ascii')
     print("Received number:" + recv_str)
