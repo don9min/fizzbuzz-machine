@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 # Most of the code is based on https://github.com/joelgrus/fizz-buzz-tensorflow/blob/master/pydata-chicago/deep.py
 
-import socket                                                   # import socket module
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
+import socket
+import tensorflow.keras as keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout
 import numpy as np
 
 ####### machine learning programming #######
@@ -58,7 +59,7 @@ if flag_realtime_learning == 1:
 
     model.save("set_fizzbuzz_learning_" + str(train_start) + "_" + str(train_end) + ".h5")
 else:
-    from keras.models import load_model
+    from tensorflow.keras.models import load_model
     model = load_model('fizzbuzz_learning_101_1024.h5')
 
 #print("train_x:", train_x)
@@ -97,8 +98,8 @@ raw_y = 0;
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)           # create a socket object
 host = socket.gethostname()                                     # get local machine name
-port = 51002                                                    # reserve a port for your service
-s.bind(('192.168.87.107', port))                                            # bind to the port
+port = 9361                                                    # reserve a port for your service
+s.bind(('192.168.0.3', port))                                            # bind to the port
 s.listen(5)                                                     # wait for connection
 while raw_x <= num_iter:
     # initialize
