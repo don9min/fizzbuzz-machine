@@ -72,7 +72,7 @@ def inference_unit(numbers):
     x = np.transpose(binary_encoder(numbers, num_digits))
 #    print("x:",x)
 #    inference = [fizzbuzz_output(i+1, y) for i, y in enumerate(np.argmax(model.predict(x), axis=1))]
-    inference = [y for i, y in enumerate(np.argmax(model.predict(x), axis=1))]
+    inference = [y for i, y in enumerate(np.argmax(model.predict(np.array(x)), axis=1))]
 #    print("inference:",inference)
     return inference[0]
 
